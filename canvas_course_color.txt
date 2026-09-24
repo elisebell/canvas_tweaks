@@ -1,0 +1,82 @@
+// ==UserScript==
+// @name          canvas_course_color
+// @description	  differentiate canvas courses by color, based on SMU Dark Canvas LMS
+// @author        You
+// @include       https://*.ucla.edu/courses/237323*
+// @run-at        document-start
+// @version       1
+// ==/UserScript==
+/* background color = #B4F3DB */
+(function() {var css = [
+	":root {",
+	"        --dtheme-bg-primary: #B4F3DB;",
+	"    }",
+	"",
+	"    body {",
+	"        background: var(--dtheme-bg-primary);",
+	"    }",
+	"",
+	"    a:hover {",
+	"        text-decoration: none;",
+	"    }",
+	"",
+	"    .ic-Dashboard-header__layout, .sJGfW_bGBk:hover,",
+	"    .fQfxa_bGBk:hover .fQfxa_dqAF.fQfxa_buuG,",
+	"    .navigation-tray-container,",
+	"    #breadcrumbs,",
+	"    table.summary tbody th,",
+	"    .ui-tabs .ui-tabs-panel,",
+	"    select,",
+	"    .ui-tabs .ui-tabs-nav li.ui-tabs-active, .ui-tabs .ui-tabs-nav li.ui-tabs-active.ui-state-hover, .ui-tabs .ui-tabs-nav li.ui-tabs-active:hover,",
+	"    .ui-tabs .ui-tabs-nav li.ui-state-hover, .ui-tabs .ui-tabs-nav li:hover,",
+	"    .item-group-container,",
+	"    .item-group-condensed .ig-row,",
+	"    .header-bar,",
+	"    .module-sequence-footer .module-sequence-footer-content,",
+	"    .pinned-discussions-v2__wrapper, .unpinned-discussions-v2__wrapper,",
+	"    .closed-for-comments-discussions-v2__wrapper,",
+	"    .mce-menu,",
+	"    .DyQTK_ddES, .DyQTK_ddES.DyQTK_EwaR:hover,",
+	"    .ccWIh_bGBk, .erWSf_bGBk, .deUoG_bGBk,",
+	"    #calendar-app .fc-month-view .fc-body, #calendar-drag-and-drop-container .fc-month-view .fc-body,",
+	"    .ui-state-active, .ui-progressbar .ui-widget-header, .ui-widget-header .ui-state-active, .ui-widget-header .ui-progressbar .ui-widget-header, .ui-progressbar .ui-widget-header .ui-widget-header,",
+	"    #context-list-holder, #undated-events,",
+	"    #minical, .ac-input-box,",
+	"    .Day-styles__root, .EmptyDays-styles__root, .PlannerHeader-styles__root,",
+	"    .agenda-wrapper,",
+	"    #calendar-app .fc-agendaWeek-view .fc-body, #calendar-drag-and-drop-container .fc-agendaWeek-view .fc-body,",
+	"    .ic-Table.ic-Table--striped tbody tr:nth-child(odd) {",
+	"        background: var(--dtheme-bg-primary)!important;",
+	"    }",
+	"",
+	"    /* NAVBAR ACTIVE ICON */",
+	"    .ic-app-header__menu-list-item.ic-app-header__menu-list-item--active .ic-icon-svg {",
+	"        fill: var(--dtheme-bg-primary);",
+	"    }",
+	"",
+	"    /* NAVBAR ACTIVE COLOR */",
+	"    body.primary-nav-expanded .ic-app-header__menu-list-item.ic-app-header__menu-list-item--active .menu-item__text {",
+	"        color: var(--dtheme-bg-primary);",
+	"    }",
+	"",
+	"    /* UI UTILS (BOOTSTRAP) */",
+	"    .ui-datepicker td a.ui-state-default.ui-state-hover {",
+	"        background: var(--dtheme-bg-primary);",
+	"        border: none;",
+	"    }"
+].join("\n");
+if (typeof GM_addStyle != "undefined") {
+	GM_addStyle(css);
+} else {
+	var node = document.createElement("style");
+	node.type = "text/css";
+	node.appendChild(document.createTextNode(css));
+	var heads = document.getElementsByTagName("head");
+	if (heads.length > 0) {
+		heads[0].appendChild(node);
+	} else {
+		// no head yet, stick it whereever
+		document.documentElement.appendChild(node);
+	}
+}
+})();
