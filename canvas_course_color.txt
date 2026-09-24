@@ -1,12 +1,15 @@
 // ==UserScript==
 // @name          canvas_course_color
-// @description	  differentiate canvas courses by color, based on SMU Dark Canvas LMS
+// @description	  differentiate canvas courses by color, based on SMU Dark Canvas LMS (https://github.com/luisegarduno/SMU-DarkCanvas)
 // @author        elisebell
 // @namespace     https://github.com/elisebell/canvas_tweaks
 // @include       https://*.ucla.edu/courses/237323*
 // @run-at        document-start
 // @version       1
 // ==/UserScript==
+/* Change the course number to your canvas course in the @include line above. 
+If you want to use a different background color, find its hex code and change it in line 13 (for notes)
+and in line 16 after '--dtheme-bg-primary: '.*/
 /* background color = #B4F3DB */
 (function() {var css = [
 	":root {",
