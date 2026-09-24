@@ -1,7 +1,8 @@
 // ==UserScript==
 // @name          canvas_course_color
 // @description	  differentiate canvas courses by color, based on SMU Dark Canvas LMS
-// @author        You
+// @author        elisebell
+// @namespace     https://github.com/elisebell/canvas_tweaks
 // @include       https://*.ucla.edu/courses/237323*
 // @run-at        document-start
 // @version       1
